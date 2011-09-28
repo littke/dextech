@@ -1,12 +1,35 @@
 @import "elements.less";
 
 /* ============================== */
+/* ! Misc handy classes           */
+/* ============================== */
+
+.highlight { color: #ff5700; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+.breaker { clear: both; }
+
+/* ============================== */
 /* ! Layout for desktop version   */
 /* ============================== */
 
 body {
     font: 16px/1.3 'Helvetica Neue', Helvetica, 'Lucida Grande', Verdana, sans-serif;
     background: url('../img/main_bg.png') repeat;
+
+    a {
+        text-decoration: none;
+        color: #0645AD;
+
+        &:visited {
+            color: #423a8e;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 
     header {
         height: 150px;
@@ -49,10 +72,17 @@ body {
 
         h3 {
             font-size: 17px;
+            font-style: italic;
             margin: 0.6em 0 0.4em;
         }
 
         li { margin-left: 20px; }
+
+        #illustration {
+            img {
+                margin-top: 1.2em;
+            }
+        }
 
         #related_publications {
             ol { 
@@ -62,6 +92,10 @@ body {
                 }
             }
         }
+    }
+
+    footer {
+        background: #0f6780;
     }
 }
 
@@ -81,11 +115,11 @@ body {
 /* ! Smaller screens             */
 /* ============================= */
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 900px) {
 
 	body {
         font-size: 14px;
-        line-height: 1.1;
+        line-height: 1.25;
 	}
 	
 }
