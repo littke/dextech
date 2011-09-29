@@ -1,14 +1,45 @@
 @import "elements.less";
 
 /* ============================== */
+/* ! Color scheme                 */
+/* ============================== */
+
+@light_base: #47c0df;
+@regular_base: #31aad2;
+@dark_base: #036080;
+
+@highlight: #ff5700;
+
+
+/* ============================== */
 /* ! Misc handy classes           */
 /* ============================== */
 
-.highlight { color: #ff5700; }
+.highlight { color: @highlight; }
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
 .breaker { clear: both; }
+
+
+/* ============================== */
+/* ! Global rules                 */
+/* ============================== */
+
+a {
+    text-decoration: none;
+    color: @regular_base;
+
+    &:visited {
+        color: #423a8e;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+address { font-style: normal; }
 
 /* ============================== */
 /* ! Layout for desktop version   */
@@ -18,53 +49,47 @@ body {
     font: 16px/1.3 'Helvetica Neue', Helvetica, 'Lucida Grande', Verdana, sans-serif;
     background: url('../img/main_bg.png') repeat;
 
-    a {
-        text-decoration: none;
-        color: #0645AD;
-
-        &:visited {
-            color: #423a8e;
-        }
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
     header {
         height: 150px;
         color: white;
-        .box-shadow(1px 0 2px #999);
+        .box-shadow(1px 0 2px #555);
         background-image: url('../img/header_bg.png');
-        border-bottom: 1px #0a5871 solid;
+        border-bottom: 1px darken(@dark_base, 8%) solid;
 
         .twelvecol {
-            position: absolute;
+            position: relative;
 
             h1 {
                 font-size: 42px;
                 margin: 0;
-                position: relative;
+                position: absolute;
                 left: -50px;
                 top: 0;
             }
 
             span {
                 position: absolute;
-                top: 70px;
+                top: 72px;
                 left: 310px;
-                text-shadow: 0px 1px 0px #187596;
+                text-shadow: 0px 1px 0px #0f607b;
+            }
+
+            #abstract {
+                position: absolute;
+                right: 0;
+                top: 0;
             }
         }
     }
 
     #main {
+        color: #555;
         margin-top: 20px; 
         
-        p { margin: 0.5em 0 0.9em; }
+        ul, ol, p { margin: 0.5em 0 0.9em; }
 
         h2 {
-            color: #31aad2;
+            color: @regular_base;
             font-size: 26px;
             margin: 0.4em 0 0.2em;
             text-shadow: 0px 1px 0px #fff;
@@ -73,10 +98,10 @@ body {
         h3 {
             font-size: 17px;
             font-style: italic;
-            margin: 0.6em 0 0.4em;
+            margin: 0.7em 0 0.5em;
         }
 
-        li { margin-left: 20px; }
+        li { margin: 5px 0 0 20px; }
 
         #illustration {
             img {
@@ -87,7 +112,7 @@ body {
         #related_publications {
             ol { 
                 li {
-                    font-size: 0.8em;
+                    font-size: 0.9em;
                     margin-left: 25px;
                 }
             }
@@ -95,6 +120,8 @@ body {
     }
 
     footer {
+        margin-top: 10px;
+        padding: 20px;
         background: #0f6780;
     }
 }
@@ -108,19 +135,27 @@ body {
 	body {
         font-size: 16px;
         line-height: 1.2;
+
+        header {
+            .twelvecol { 
+                #abstract {
+                    display: none;
+                }
+
+                h1 {
+                    padding-left: 30px;
+                    img {
+                        width: 300px;
+                    }
+                }
+
+                span {
+                    top: 110px;
+                    left: 30px;
+                    font-size: 15px;
+                }
+            }
+        }
 	}
-}
-
-/* ============================= */
-/* ! Smaller screens             */
-/* ============================= */
-
-@media only screen and (max-width: 900px) {
-
-	body {
-        font-size: 14px;
-        line-height: 1.25;
-	}
-	
 }
 

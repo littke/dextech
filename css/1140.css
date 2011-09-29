@@ -17,8 +17,13 @@ width: 100%;
 max-width: 960px;
 min-width: 755px;
 margin: 0 auto;
-overflow: hidden;
+margin-bottom: 10px;
+*zoom: 1;
 }
+
+/* Adding clearfix to rows instead of overflow: hidden; */
+.row:before, .row:after { content: ""; display: table; }
+.row:after { clear: both; }
 
 .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol {
 margin-right: 3.8%;
