@@ -67,7 +67,7 @@ body {
 
             span {
                 position: absolute;
-                top: 72px;
+                top: 70px;
                 left: 310px;
                 text-shadow: 0px 1px 0px #0f607b;
             }
@@ -103,7 +103,8 @@ body {
 
         #illustration {
             img {
-                margin-top: 1.2em;
+                margin-top: 3.2em;
+                border-radius: 5px;
             }
         }
 
@@ -132,7 +133,7 @@ body {
 
             #footer_abstract {
                 position: absolute;
-                right: 455px;
+                right: 45%;
                 top: 5px;
             }
 
@@ -150,7 +151,6 @@ body {
 /* ============================= */
 @media handheld, only screen and (max-width: 767px) {
 	body {
-        font-size: 16px;
         line-height: 1.2;
 
         header {
@@ -170,6 +170,19 @@ body {
                     top: 110px;
                     left: 30px;
                     font-size: 15px;
+                }
+            }
+        }
+
+        footer {
+            .row {
+                #footer_abstract {
+                    display: none;
+                }
+
+                address { 
+                    float: none;
+                    padding-left: 2px;
                 }
             }
         }
